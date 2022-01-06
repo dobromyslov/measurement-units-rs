@@ -1,0 +1,16 @@
+[package]
+name = "measurement-units"
+version = "0.1.0"
+edition = "2021"
+authors = ["Viacheslav Dobromyslov <viacheslav@dobromyslov.ru>"]
+description = "Rust library for basic measurements units conversion such as length, mass, time, volume, percents."
+repository = "https://github.com/dobromyslov/measurement-units-rs"
+homepage = "https://github.com/dobromyslov/measurement-units-rs#readme"
+readme = "README.md"
+license-file = "license"
+keywords = ["measurement units"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

@@ -1,6 +1,6 @@
 use crate::Convertable;
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum Length {
     MM,
     CM,
@@ -17,5 +17,31 @@ impl Convertable for Length {
             DM => 0.1,
             M => 1.0,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::convert;
+    use super::Length;
+
+    #[test]
+    fn convert_length() {
+        assert_eq!(
+            convert(&1.0, &Length::M, &Length::MM, &None),
+            1000.0
+        );
+        assert_eq!(
+            convert(&1000.0, &Length::MM, &Length::M, &None),
+            1.0
+        );
+        assert_eq!(
+            convert(&1.0, &Length::DM, &Length::M, &None),
+            0.1
+        );
+        assert_eq!(
+            convert(&1.0, &Length::CM, &Length::M, &None),
+            0.01
+        );
     }
 }

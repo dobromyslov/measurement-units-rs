@@ -1,6 +1,6 @@
 use crate::Convertable;
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum Time {
     S,
     M,
@@ -15,5 +15,27 @@ impl Convertable for Time {
             M => 60.0,
             H => 360.0,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::convert;
+    use super::Time;
+
+    #[test]
+    fn convert_time() {
+        assert_eq!(
+            convert(&1.0, &Time::S, &Time::M, &None),
+            1.0 / 60.0
+        );
+        assert_eq!(
+            convert(&1.0, &Time::S, &Time::H, &None),
+            1.0 / 360.0
+        );
+        assert_eq!(
+            convert(&1.0, &Time::H, &Time::S, &None),
+            360.0
+        );
     }
 }

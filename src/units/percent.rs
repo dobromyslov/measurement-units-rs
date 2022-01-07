@@ -1,6 +1,6 @@
 use crate::Convertable;
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum Percent {
     PERCENT,
     DECIMAL
@@ -13,5 +13,23 @@ impl Convertable for Percent {
             PERCENT => 0.01,
             DECIMAL => 1.0,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::convert;
+    use super::Percent;
+
+    #[test]
+    fn convert_percent() {
+        assert_eq!(
+            convert(&1.0, &Percent::PERCENT, &Percent::DECIMAL, &None),
+            0.01
+        );
+        assert_eq!(
+            convert(&0.5, &Percent::DECIMAL, &Percent::PERCENT, &None),
+            50.0
+        );
     }
 }

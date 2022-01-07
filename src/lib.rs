@@ -1,3 +1,4 @@
+mod util;
 pub mod units;
 
 pub trait Convertable {
@@ -14,14 +15,6 @@ where T: Convertable + PartialEq
 
     match precision {
         None => result,
-        Some(precision) => round_to_precision(&result, precision)
+        Some(precision) => util::round_to_precision(&result, precision)
     }
 }
-
-fn round_to_precision(value: &f64, precision: &u32) -> f64 {
-    let multiplier= 10u32.pow(*precision) as f64;
-    return (value * multiplier).round() / multiplier;
-}
-
-#[cfg(test)]
-mod tests;

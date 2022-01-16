@@ -1,6 +1,6 @@
 [package]
 name = "measurement-units"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Viacheslav Dobromyslov <viacheslav@dobromyslov.ru>"]
 description = "Rust library for basic measurements units conversion such as length, mass, time, volume, percents."

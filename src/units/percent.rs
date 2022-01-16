@@ -1,5 +1,6 @@
 use crate::Convertable;
 
+/// Measurement units for percent to convert it to the decimal value and vice-versa.
 #[derive(PartialEq, Debug)]
 pub enum Percent {
     PERCENT,

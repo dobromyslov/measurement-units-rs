@@ -1,5 +1,14 @@
 use crate::Convertable;
 
+/// Measurement units for volume.
+///
+/// # Example
+/// ```
+/// use measurement_units::{ convert, Volume };
+///
+/// let volume_in_m3 = convert(&1.0, &Volume::L, &Volume::M3, &None);
+/// assert_eq!(0.001, volume_in_m3);
+/// ```
 #[derive(PartialEq, Debug)]
 pub enum Volume {
     L,
@@ -7,6 +16,7 @@ pub enum Volume {
 }
 
 impl Convertable for Volume {
+    /// Conversion coefficients for volume measurement units.
     fn conversion_coefficient(&self) -> f64 {
         use Volume::*;
         match self {

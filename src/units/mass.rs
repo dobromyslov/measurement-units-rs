@@ -1,5 +1,6 @@
 use crate::Convertable;
 
+/// Measurement units for mass.
 #[derive(PartialEq, Debug)]
 pub enum Mass {
     G,

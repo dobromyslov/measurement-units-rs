@@ -1,5 +1,6 @@
 use crate::Convertable;
 
+/// Measurement units for length.
 #[derive(PartialEq, Debug)]
 pub enum Length {
     MM,

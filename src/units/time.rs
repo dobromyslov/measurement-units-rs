@@ -1,5 +1,6 @@
 use crate::Convertable;
 
+/// Measurement units for time.
 #[derive(PartialEq, Debug)]
 pub enum Time {
     S,
